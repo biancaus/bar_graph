@@ -19,40 +19,29 @@
   'salmon', 87,
   'wheat', 12
 ]
- 
- //    <div class="bar" style="height:200px; left:60px; background-color:yellow"></div>
+    
+    
     var color;
     var percent;
-    var origin = 20;
+    var origin = 0 ;
     
 for (i= 0; i < data.length; i++){
-
-            var label;
-            var pecentage;
             
         var bar = document.createElement('div');
         bar.setAttribute('class', 'bar');
         document.getElementById('frame').appendChild(bar);
+        origin += 20;
+        bar.style.left = origin + 'px';
             
-            for (var label = 0; label < i; label += 2) {
-                    color = data[label];
+            for (var label = 0; label < i; label += 1) {
+                color = data[label];
             }           
-            document.write("<br>");
+                document.write("<br>");
             
-                for(var percentage = 1; percentage < i+1; percentage += 2){
-                    percent = data[percentage]*4 + 'px';
-                }
-                
-        document.write(data[label]);
-        document.write(data[percentage]*4 + 'px');
-        
-       
+            for (var percentage = 1; percentage < i+1; percentage +=1){
+                percent = data[percentage]*4 + 'px';
+            }
+    
         bar.style.backgroundColor = color;
-        bar.style.left += origin + 'px';
-
-        bar.style.height = percent;
-        
-            origin += 20;
-            label += 2;
-            pecentage += 2;
+        bar.style.height = percent;           
 }
