@@ -21,18 +21,28 @@
 ]
  
  //    <div class="bar" style="height:200px; left:60px; background-color:yellow"></div>
+    var color;
+    var percent;
+        var left;
     
-for (var label = 0; label < data.length; label += 2) {
-        document.write(data[label]);
-        
-        var bar = document.createElement('div');
-        piece.setAttribute('class', 'bar');
-        document.getElementById('board').appendChild(piece); // add the div to the id="board"
-        piece.style.left = i*100 + 'px';
-        
-}
-document.write("<br>");
-    for(var percentage = 1; percentage < data.length; percentage += 2){
-        document.write(data[percentage]);
-    }
+for (i= 0; i < data.length; i++){
 
+            for (var label = 0; label < data.length; label += 2) {
+                    document.write(data[label]);
+                    color = data[label];
+            }           
+            document.write("<br>");
+            
+                for(var percentage = 1; percentage < data.length; percentage += 2){
+                    document.write(data[percentage]*4 + 'px');
+                    percent = data[percentage]*4 + 'px';
+                }
+                
+        var bar = document.createElement('div');
+        bar.setAttribute('class', 'bar');
+        document.getElementById('frame').appendChild(bar);
+        bar.style.backgroundColor = color;
+        
+        bar.style.left = left + 40 + 'px';
+        bar.style.height = percent;
+}
