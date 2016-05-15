@@ -27,6 +27,13 @@
     
 for (i= 0; i < data.length; i++){
 
+            var label;
+            var pecentage;
+            
+        var bar = document.createElement('div');
+        bar.setAttribute('class', 'bar');
+        document.getElementById('frame').appendChild(bar);
+            
             for (var label = 0; label < i; label += 2) {
                     color = data[label];
             }           
@@ -39,10 +46,13 @@ for (i= 0; i < data.length; i++){
         document.write(data[label]);
         document.write(data[percentage]*4 + 'px');
         
-        var bar = document.createElement('div');
-        bar.setAttribute('class', 'bar');
-        document.getElementById('frame').appendChild(bar);
+       
+        bar.style.backgroundColor = color;
         bar.style.left += origin + 'px';
-        origin += 40;
+
         bar.style.height = percent;
+        
+            origin += 20;
+            label += 2;
+            pecentage += 2;
 }
